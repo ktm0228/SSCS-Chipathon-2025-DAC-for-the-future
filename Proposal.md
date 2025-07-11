@@ -71,17 +71,22 @@ These enable modular experiments, e.g., combining OTA + BGR + LDO for a full pow
 
 ## 4. Application Diagrams
 Different modes of operation:
-Mode 00: Programmable RC Fixed Frequency Oscillator
-(docs/screenshots/Chipathon2025-Page-1.drawio.png)
 
-Mode 01: Voltage control oscillator
-(docs/screenshots/Chipathon2025-Page-2.drawio.png)
+### Mode 00: Programmable RC Fixed Frequency Oscillator
 
-Mode 10: LDO
-(docs/screenshots/Chipathon2025-Page-3.drawio.png)
+![Mode 00](docs/Chipathon2025-Page-1.drawio.png)
 
-Mode 11: 3-bit DAC
-(docs/screenshots/Chipathon2025-Page-4.drawio.png)
+### Mode 01: Voltage control oscillator
+
+![Mode 01](docs/Chipathon2025-Page-2.drawio.png)
+
+### Mode 10: LDO
+
+![Mode 10](docs/Chipathon2025-Page-3.drawio.png)
+
+### Mode 11: 3-bit DAC
+
+![Mode 11](docs/Chipathon2025-Page-4.drawio.png)
 
 
 ## 5. Testing Methodology
