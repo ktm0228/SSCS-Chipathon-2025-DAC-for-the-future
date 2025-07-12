@@ -1,0 +1,39 @@
+v {xschem version=3.4.7 file_version=1.2}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -150 -10 -130 -10 {}
+L 4 -150 10 -130 10 {}
+L 4 130 -40 150 -40 {}
+L 4 130 -20 150 -20 {}
+L 4 130 0 150 0 {}
+L 4 130 20 150 20 {}
+L 4 130 40 150 40 {}
+L 7 0 -90 0 -70 {}
+L 7 0 70 0 90 {}
+B 5 -2.5 -92.5 2.5 -87.5 {name=vdd dir=inout}
+B 5 -2.5 87.5 2.5 92.5 {name=vss dir=inout}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=M0 dir=in}
+B 5 -152.5 7.5 -147.5 12.5 {name=M1 dir=in}
+B 5 147.5 -42.5 152.5 -37.5 {name=enable_ota dir=out}
+B 5 147.5 -22.5 152.5 -17.5 {name=comp_en dir=out}
+B 5 147.5 -2.5 152.5 2.5 {name=enable_osc dir=out}
+B 5 147.5 17.5 152.5 22.5 {name=enable_dac dir=out}
+B 5 147.5 37.5 152.5 42.5 {name=enable_vco dir=out}
+P 4 5 130 -70 -130 -70 -130 70 130 70 130 -70 {}
+T {@symname} -49.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -82 0 0 0.2 0.2 {}
+T {vdd} -4 -65 3 1 0.2 0.2 {}
+T {vss} 4 65 1 1 0.2 0.2 {}
+T {M0} -125 -14 0 0 0.2 0.2 {}
+T {M1} -125 6 0 0 0.2 0.2 {}
+T {enable_ota} 125 -44 0 1 0.2 0.2 {}
+T {comp_en} 125 -24 0 1 0.2 0.2 {}
+T {enable_osc} 125 -4 0 1 0.2 0.2 {}
+T {enable_dac} 125 16 0 1 0.2 0.2 {}
+T {enable_vco} 125 36 0 1 0.2 0.2 {}

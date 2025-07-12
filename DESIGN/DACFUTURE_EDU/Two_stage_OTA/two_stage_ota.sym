@@ -1,0 +1,39 @@
+v {xschem version=3.4.7 file_version=1.2}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 130 -20 150 -20 {}
+L 4 -150 -30 -130 -30 {}
+L 4 -150 -10 -130 -10 {}
+L 4 130 20 150 20 {}
+L 4 -150 10 -130 10 {}
+L 4 -150 30 -130 30 {}
+L 7 40 -60 40 -40 {}
+L 7 0 40 0 60 {}
+L 7 0 -60 0 -40 {}
+B 5 147.5 -22.5 152.5 -17.5 {name=out_stage1 dir=out spice_ignore=short}
+B 5 -152.5 -32.5 -147.5 -27.5 {name=compensation_enable dir=in}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=enable dir=in}
+B 5 147.5 17.5 152.5 22.5 {name=out_stage2 dir=out}
+B 5 -152.5 7.5 -147.5 12.5 {name=vpos dir=in}
+B 5 -152.5 27.5 -147.5 32.5 {name=vneg dir=in}
+B 5 37.5 -62.5 42.5 -57.5 {name=ibias dir=inout}
+B 5 -2.5 57.5 2.5 62.5 {name=vss dir=inout}
+B 5 -2.5 -62.5 2.5 -57.5 {name=ibias dir=in}
+P 4 5 130 -40 -130 -40 -130 40 130 40 130 -40 {}
+T {@symname} -76.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -52 0 0 0.2 0.2 {}
+T {out_stage1} 125 -24 0 1 0.2 0.2 {}
+T {compensation_enable} -125 -34 0 0 0.2 0.2 {}
+T {enable} -125 -14 0 0 0.2 0.2 {}
+T {out_stage2} 125 16 0 1 0.2 0.2 {}
+T {vpos} -125 6 0 0 0.2 0.2 {}
+T {vneg} -125 26 0 0 0.2 0.2 {}
+T {vdd} 35 -64 0 1 0.2 0.2 {}
+T {vss} -5 56 0 1 0.2 0.2 {}
+T {ibias} -5 -64 0 1 0.2 0.2 {}
