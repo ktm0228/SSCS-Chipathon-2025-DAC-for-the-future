@@ -1,13 +1,13 @@
 # DAC to the Future: Multi-Mode Educational Analog Chip Proposal for IEEE SSCS Chipathon 2025 MOSbius Track
-This is our chip proposal (DACFUTURE-EDU) for the SSCS PICO Design Contest (Chipathon 2025) in the MOSbius track. The chip extends the original MOSbius concept to focus on power management circuits, enabling educational experiments in advanced analog IC design.
+This is our chip proposal (DACFUTURE-EDU) for the SSCS PICO Design Contest (Chipathon 2025) in the MOSbius track. The chip extends the original MOSbius concept to focus on power management circuits and oscillators, enabling educational experiments in advanced analog IC design.
 
 ## Datasheet
 
 ### Functionality of Your Chip & Target Specs
 DACFUTURE-EDU is a chip inspired by the original MOSbius, optimized for power management and analog circuit experiments in advanced IC design courses. It allows users to configure and test CMOS transistors in power-related topologies (e.g., LDOs, BGRs) via a programmable switch matrix, enabling rapid prototyping without full tapeouts.
-- **Core Functionality**: Reconfigurable 2-stage OTA as the central building block, combinable with peripherals for experiments like MOS characteristics, single-stage amplifiers, compensated OTAs, BGRs, LDOs, and oscillators.
+- **Core Functionality**: Reconfigurable 2-stage OTA as the central building block, combinable with peripherals for experiments like MOS characteristics, single-stage amplifier, compensated OTA, BGR, LDO, and oscillator.
 - **Added Features**:
-  - 4-bit DAC for programmable voltage references or switching (e.g., in LDO feedback or BGR trimming).
+  - 3-bit DAC for programmable voltage references or switching (e.g., in LDO feedback or BGR trimming).
   - Programmable VCO (voltage-controlled oscillator).
   - Programmable RC oscillator for clock generation.
   - Integration of BGR (bandgap reference) and LDO (low-dropout regulator) blocks, configurable with the OTA for stability/compensation experiments.
@@ -24,7 +24,7 @@ DACFUTURE-EDU is a chip inspired by the original MOSbius, optimized for power ma
 - **Mode 00**: Programmable RC Fixed Frequency Oscillator 
 - **Mode 01**: Voltage Controlled Oscillator 
 - **Mode 10**: Low Dropout Regulator 
-- **Mode 11**: 4-bit DAC
+- **Mode 11**: 3-bit DAC
   
 #### Core OTA Block
 - DC Gain: 
@@ -45,7 +45,7 @@ DACFUTURE-EDU is a chip inspired by the original MOSbius, optimized for power ma
 **LDO Mode:**
 
 **DAC Mode:**
-- Resolution: 4-bit
+- Resolution: 3-bit
 - Output Range: 0-3V
 
 ### Additional Building Blocks
@@ -58,7 +58,7 @@ DACFUTURE-EDU is a chip inspired by the original MOSbius, optimized for power ma
 
 ## Functionality of Building Blocks
 - **2-Stage OTA (Core)**: Amplifies differential signals; configurable gain/bandwidth; supports Miller compensation for stability experiments.
-- **4-Bit DAC**: Generates programmable voltages (e.g., for LDO setpoint or BGR trimming); used in switching experiments.
+- **3-Bit DAC**: Generates programmable voltages (e.g., for LDO setpoint or BGR trimming); used in switching experiments.
 - **Programmable VCO**: Voltage-tunable ring oscillator.
 - **Programmable RC Oscillator**: RC-based relaxation oscillator.
 - **BGR (Bandgap Reference)**: Provides stable voltage reference; combinable with OTA.
