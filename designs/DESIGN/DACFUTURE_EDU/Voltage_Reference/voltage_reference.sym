@@ -1,0 +1,36 @@
+v {xschem version=3.4.7 file_version=1.2}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -150 -40 -130 -40 {}
+L 4 -150 40 -130 40 {}
+L 4 70 60 70 80 {}
+L 4 50 60 50 80 {}
+L 4 30 60 30 80 {}
+L 4 130 0 150 0 {}
+L 7 0 60 0 80 {}
+L 7 0 -80 0 -60 {}
+B 5 -2.5 77.5 2.5 82.5 {name=vss dir=inout}
+B 5 -2.5 -82.5 2.5 -77.5 {name=vdd dir=inout}
+B 5 -152.5 -42.5 -147.5 -37.5 {name=enable_ota_current dir=in}
+B 5 -152.5 37.5 -147.5 42.5 {name=enable_osc_current dir=in}
+B 5 47.5 77.5 52.5 82.5 {name=iout_cap dir=out}
+B 5 67.5 77.5 72.5 82.5 {name=iout_res dir=out}
+B 5 27.5 77.5 32.5 82.5 {name=iout_ota dir=out}
+B 5 147.5 -2.5 152.5 2.5 {name=vref dir=out}
+P 4 5 130 -60 -130 -60 -130 60 130 60 130 -60 {}
+T {@symname} -44.5 -16 0 0 0.3 0.3 {}
+T {@name} 135 -72 0 0 0.2 0.2 {}
+T {vss} 4 55 1 1 0.2 0.2 {}
+T {vdd} -4 -55 3 1 0.2 0.2 {}
+T {enable_ota_current} -125 -44 0 0 0.2 0.2 {}
+T {enable_osc_current} -125 36 0 0 0.2 0.2 {}
+T {iout_cap} 54 55 1 1 0.2 0.2 {}
+T {iout_res} 74 55 1 1 0.2 0.2 {}
+T {iout_ota} 34 55 1 1 0.2 0.2 {}
+T {vref} 125 -4 0 1 0.2 0.2 {}
