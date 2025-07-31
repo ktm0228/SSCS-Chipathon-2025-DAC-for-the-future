@@ -29,10 +29,10 @@ node="\\"vo db20()\\""
 sim_type=ac
 autoload=0
 hilight_wave=-1
-x2=9}
+x2=10}
 B 2 890 570 1690 970 {flags=graph
-y1=-150
-y2=0
+y1=-180
+y2=180
 ypos1=0
 ypos2=2
 divy=5
@@ -55,12 +55,12 @@ node=ph(vo)
 sim_type=ac
 autoload=0
 hilight_wave=-1
-x2=9}
+x2=10}
 T {tcleval(A0: [to_eng [xschem raw value A0 0]]
 GBW: [to_eng [xschem raw value GBW 0]]
 UGF: [to_eng [xschem raw value ugf 0]]
 PM: [to_eng [xschem raw value pm 0]]
-)} 770 260 0 0 0.4 0.4 {floater=1}
+)} 750 290 0 0 0.4 0.4 {floater=1}
 N 720 80 740 80 {
 lab=vo}
 N 260 300 300 300 {
@@ -99,7 +99,7 @@ N 220 300 260 300 {
 lab=#net1}
 N 340 200 420 200 {lab=vim}
 N 340 200 340 210 {lab=vim}
-N 170 120 410 120 {lab=vip}
+N 180 120 410 120 {lab=vip}
 N 180 120 180 210 {lab=vip}
 N 440 370 440 410 {
 lab=VSS}
@@ -110,25 +110,28 @@ lab=VDD}
 N 520 470 520 490 {
 lab=GND}
 N 800 80 800 100 {lab=vo}
-N 740 80 800 80 {lab=vo}
 N 800 100 800 120 {lab=vo}
-N 800 180 800 220 {lab=GND}
+N 800 200 800 240 {lab=GND}
 N 410 70 410 120 {lab=vip}
 N 410 70 420 70 {lab=vip}
-N 420 90 420 200 {lab=vim}
-N 570 -20 570 -0 {lab=VDD}
+N 570 -40 570 -20 {lab=VDD}
 N 400 30 420 30 {lab=#net3}
 N 400 50 420 50 {lab=#net4}
 N 400 50 420 50 {lab=#net4}
-N 720 40 740 40 {lab=#net5}
+N 570 -20 570 -0 {lab=VDD}
+N 740 80 800 80 {lab=vo}
+N 720 40 760 40 {lab=#net5}
+N 800 120 800 140 {lab=vo}
+N 420 90 420 140 {lab=vim}
+N 420 140 420 200 {lab=vim}
 C {devices/lab_wire.sym} 610 0 0 0 {name=p2 sig_type=std_logic lab=VDD}
-C {devices/code_shown.sym} 860 40 0 0 {name=COMMANDS
+C {devices/code_shown.sym} 850 40 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false
+format="tcleval( @value )"
 value="
-.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
-.inc /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
-.inc /foss/designs/SSCS-Chipathon-2025-DAC-for-the-future/DESIGN/DACFUTURE_EDU/Two_stage_OTA/sizing_ota-2stage_gf.spice
+.include $::180MCU_MODELS/design.ngspice
+.lib $::180MCU_MODELS/sm141064.ngspice typical
 .param vdd=3.3 vcm=1.65 cl=20p
 .option savecurrents
 .control
@@ -157,13 +160,13 @@ C {devices/launcher.sym} 680 480 0 0 {name=h26
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {devices/launcher.sym} 680 520 0 0 {name=h27
+C {devices/launcher.sym} 680 530 0 0 {name=h27
 descr="Load AC" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw ac
 "
 }
-C {devices/lab_wire.sym} 740 80 0 1 {name=p11 sig_type=std_logic lab=vo}
+C {devices/lab_wire.sym} 780 80 0 1 {name=p11 sig_type=std_logic lab=vo}
 C {devices/vcvs.sym} 180 320 0 1 {name=E1 value=0.5}
 C {devices/vcvs.sym} 340 320 0 0 {name=E2 value=-0.5}
 C {devices/vsource.sym} 80 440 0 0 {name=Vdm value="dc 0 ac 1" savecurrent=false}
@@ -178,17 +181,17 @@ C {devices/vsource.sym} 520 440 0 0 {name=V1 value=\{vdd\} savecurrent=false}
 C {devices/lab_wire.sym} 440 370 0 0 {name=p1 sig_type=std_logic lab=VSS}
 C {devices/lab_wire.sym} 520 370 0 0 {name=p5 sig_type=std_logic lab=VDD}
 C {devices/gnd.sym} 520 490 0 0 {name=l1 lab=GND}
-C {devices/capa.sym} 800 150 0 0 {name=C1
+C {devices/capa.sym} 800 170 0 0 {name=C1
 m=1
 value=\{cl\}
 footprint=1206
 device="ceramic capacitor"}
-C {devices/gnd.sym} 800 220 0 0 {name=l2 lab=GND}
-C {devices/isource.sym} 570 -50 0 0 {name=IB value=\{ibn\}}
-C {devices/lab_wire.sym} 570 -80 0 0 {name=p3 sig_type=std_logic lab=VDD}
+C {devices/gnd.sym} 800 240 0 0 {name=l2 lab=GND}
+C {devices/isource.sym} 570 -70 0 0 {name=IB value=10u}
+C {devices/lab_wire.sym} 570 -100 0 0 {name=p3 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 270 120 0 1 {name=p4 sig_type=std_logic lab=vip}
 C {devices/lab_wire.sym} 360 200 0 1 {name=p6 sig_type=std_logic lab=vim}
 C {DACFUTURE_EDU/Two_stage_OTA/two_stage_ota.sym} 570 60 0 0 {name=x1}
 C {noconn.sym} 400 30 0 0 {name=l4}
 C {noconn.sym} 400 50 0 0 {name=l8}
-C {noconn.sym} 740 40 0 1 {name=l9}
+C {noconn.sym} 760 40 0 1 {name=l9}

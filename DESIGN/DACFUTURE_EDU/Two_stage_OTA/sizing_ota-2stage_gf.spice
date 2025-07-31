@@ -1,7 +1,7 @@
 * Two-Stage OTA with Miller Compensation
 * GF180MCU Process
 
-.param ibn = 6.28e-06
+.param ibias = 6.28e-06
 .param W0 = 5.02e-06
 .param W1 = 3.99e-06
 .param W2 = 3.14e-07
