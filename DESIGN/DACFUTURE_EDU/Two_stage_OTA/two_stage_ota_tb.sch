@@ -61,8 +61,6 @@ GBW: [to_eng [xschem raw value GBW 0]]
 UGF: [to_eng [xschem raw value ugf 0]]
 PM: [to_eng [xschem raw value pm 0]]
 )} 750 290 0 0 0.4 0.4 {floater=1}
-N 720 80 740 80 {
-lab=vo}
 N 260 300 300 300 {
 lab=#net1}
 N 80 250 80 410 {
@@ -109,21 +107,19 @@ N 520 370 520 410 {
 lab=VDD}
 N 520 470 520 490 {
 lab=GND}
-N 800 80 800 100 {lab=vo}
-N 800 100 800 120 {lab=vo}
 N 800 200 800 240 {lab=GND}
 N 410 70 410 120 {lab=vip}
 N 410 70 420 70 {lab=vip}
-N 570 -40 570 -20 {lab=VDD}
 N 400 30 420 30 {lab=#net3}
 N 400 50 420 50 {lab=#net4}
 N 400 50 420 50 {lab=#net4}
-N 570 -20 570 -0 {lab=VDD}
-N 740 80 800 80 {lab=vo}
-N 720 40 760 40 {lab=#net5}
 N 800 120 800 140 {lab=vo}
 N 420 90 420 140 {lab=vim}
 N 420 140 420 200 {lab=vim}
+N 570 -20 570 -0 {lab=VDD}
+N 510 -80 570 -80 {lab=VSS}
+N 720 80 800 80 {lab=vo}
+N 800 80 800 120 {lab=vo}
 C {devices/lab_wire.sym} 610 0 0 0 {name=p2 sig_type=std_logic lab=VDD}
 C {devices/code_shown.sym} 850 40 0 0 {name=COMMANDS
 simulator=ngspice
@@ -156,17 +152,17 @@ value="
 
 
 "}
-C {devices/launcher.sym} 680 480 0 0 {name=h26
+C {devices/launcher.sym} 690 480 0 0 {name=h26
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {devices/launcher.sym} 680 530 0 0 {name=h27
+C {devices/launcher.sym} 700 530 0 0 {name=h27
 descr="Load AC" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw ac
 "
 }
-C {devices/lab_wire.sym} 780 80 0 1 {name=p11 sig_type=std_logic lab=vo}
+C {devices/lab_wire.sym} 750 80 0 1 {name=p11 sig_type=std_logic lab=vo}
 C {devices/vcvs.sym} 180 320 0 1 {name=E1 value=0.5}
 C {devices/vcvs.sym} 340 320 0 0 {name=E2 value=-0.5}
 C {devices/vsource.sym} 80 440 0 0 {name=Vdm value="dc 0 ac 1" savecurrent=false}
@@ -187,11 +183,11 @@ value=\{cl\}
 footprint=1206
 device="ceramic capacitor"}
 C {devices/gnd.sym} 800 240 0 0 {name=l2 lab=GND}
-C {devices/isource.sym} 570 -70 0 0 {name=IB value=10u}
-C {devices/lab_wire.sym} 570 -100 0 0 {name=p3 sig_type=std_logic lab=VDD}
+C {devices/isource.sym} 570 -50 2 0 {name=IB value=25e-6}
 C {devices/lab_wire.sym} 270 120 0 1 {name=p4 sig_type=std_logic lab=vip}
 C {devices/lab_wire.sym} 360 200 0 1 {name=p6 sig_type=std_logic lab=vim}
 C {DACFUTURE_EDU/Two_stage_OTA/two_stage_ota.sym} 570 60 0 0 {name=x1}
 C {noconn.sym} 400 30 0 0 {name=l4}
 C {noconn.sym} 400 50 0 0 {name=l8}
-C {noconn.sym} 760 40 0 1 {name=l9}
+C {noconn.sym} 720 40 0 1 {name=l9}
+C {devices/lab_wire.sym} 510 -80 0 0 {name=p3 sig_type=std_logic lab=VSS}
